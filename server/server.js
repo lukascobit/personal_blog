@@ -14,11 +14,22 @@ const db = mysql.createConnection({
 
 db.connect()
 
+//get all blogs
 app.get("/blogs", (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     const sql = 'SELECT * FROM blogs;'
     db.query(sql, (err, result)=>{
+        if(err) throw err;
+        res.send(result)
+    })
+});
+//get one blog
+app.get("/blogs/:id", (req, res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    const sql = 'SELECT * FROM blogs WHERE id = ?;'
+    db.query(sql,[req.params.id], (err, result)=>{
         if(err) throw err;
         res.send(result)
     })

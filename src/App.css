@@ -20,6 +20,8 @@ code{
   padding: 0.1vw;
   font-size: 1vw;
 }
+
+/* top header bar */
 .homeButton{
   text-decoration: none;
   color: rgb(205, 210, 214);
@@ -35,13 +37,6 @@ code{
 .pfp{
   width: 3vw;
 }
-.blog{
-  background-color: rgb(40, 41, 41);
-  padding: 0.4vw;
-  margin:1vw;
-  border-radius: 0.3vw;
-}
-
 .pagesLinks{
   position: absolute;
   top: 1vw;
@@ -60,6 +55,22 @@ code{
   margin: 2vw;
   text-align: center;
 }
+/*  */
+
+/* blog page */
+.blog{
+  cursor: pointer;
+  background-color: rgb(40, 41, 41);
+  padding: 0.4vw;
+  margin:1vw;
+  border-radius: 0.3vw;
+}
+.blogPostedDate{
+  float: right;
+}
+/*  */
+
+/* home page */
 .content{
   margin: 6vw 3vw 0;
 }
@@ -70,6 +81,4 @@ code{
   width: 10vw;
   padding: 1vw;
 }
-.textNotCode{
-  font-size: 2vw;
-}
+/*  */

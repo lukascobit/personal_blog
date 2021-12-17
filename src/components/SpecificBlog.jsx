@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 
 function SpecificBlog() {
     const { id } = useParams()
-    console.log(id);
     return (
         <div className='content'>
             <h1>{id}</h1>
