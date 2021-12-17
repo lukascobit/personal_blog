@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const serverDomain = "http://localhost:4000/blogs"
-
-
+const serverDomain = "http://localhost:4000/"
 
 
 function Blog() {
@@ -11,7 +9,7 @@ function Blog() {
     useEffect(()=>{
         async function getBlogs(){
             try {
-                const response = await fetch(serverDomain);
+                const response = await fetch(serverDomain + "blogs");
                 const jsonData = await response.json();
                 setData(jsonData);
                 console.log(jsonData);
