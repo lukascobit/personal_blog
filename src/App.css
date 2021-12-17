@@ -20,6 +20,11 @@ code{
   padding: 0.1vw;
   font-size: 1vw;
 }
+button{
+  background-color: black;
+  color: white;
+  border: 0.1vw white solid;
+}
 
 /* top header bar */
 .homeButton{
@@ -99,5 +104,11 @@ code{
   opacity: 0.5;
   padding: 1vw;
   text-align: center;
+}
+.back{
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  width: 1vw;
+  cursor: pointer;
 }
 /*  */
