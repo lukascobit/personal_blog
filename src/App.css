@@ -82,3 +82,22 @@ code{
   padding: 1vw;
 }
 /*  */
+
+
+/* specific blog page */
+.comments{
+  margin: 1vw;
+}
+.comment{
+  margin: 1vw;
+  padding: 0.5vw;
+  background-color: rgb(31, 33, 37);
+  font-weight: 100;
+  font-style:oblique;
+}
+.halfTransparent{
+  opacity: 0.5;
+  padding: 1vw;
+  text-align: center;
+}
+/*  */

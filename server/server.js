@@ -28,7 +28,17 @@ app.get("/blogs", (req, res)=>{
 app.get("/blogs/:id", (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    const sql = 'SELECT * FROM blogs WHERE id = ?;'
+    const sql = `
+    SELECT 
+    blogs.id,
+    blogs.title, 
+    blogs.body, 
+    comments.id,
+    comments.body AS comment_body
+    FROM blogs
+    LEFT JOIN comments
+    ON blogs.id = comments.blog_id
+    WHERE blogs.id = ?;`
     db.query(sql,[req.params.id], (err, result)=>{
         if(err) throw err;
         res.send(result)

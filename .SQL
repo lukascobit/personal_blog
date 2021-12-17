@@ -27,7 +27,7 @@ comments.body AS comment_body
 FROM blogs
 LEFT JOIN comments
 ON blogs.id = comments.blog_id
-ORDER BY comments.id;
+WHERE blogs.id = 1;
 
 CREATE TABLE replies(
     id INT AUTO_INCREMENT,

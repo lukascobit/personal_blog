@@ -13,7 +13,8 @@ function SpecificBlog() {
             try {
                 const response = await fetch(serverDomain + `blogs/${id}`);
                 const jsonData = await response.json();
-                setData(jsonData[0])
+                console.log(jsonData);
+                setData(jsonData)
             } catch (error) {
                 console.log(error);
             }
@@ -24,11 +25,22 @@ function SpecificBlog() {
 
     return (
         <div className='content'>
-            <div onClick={()=>window.location = `/blog/${data.id}`} className="blog">
-                <h3>{data.title}</h3>
-                <h3 className='blogPostedDate'>{data.posted_date}</h3>
-                <p>{data.body}</p>
+            <div onClick={()=>window.location = `/blog/${data[0].id}`} className="blog">
+                <h1>{data && data[0].title}</h1>
+                <h2 className='blogPostedDate'>{data && data[0].posted_date}</h2>
+                <p>{data && data[0].body}</p>
+                <p className='halfTransparent'>comments</p>
+                <div className='comments'>
+                    {data && data.map((d)=>{
+                            return(
+                                <div className='comment'>
+                                    <h4>{d.comment_body}</h4>
+                                </div>
+                            )
+                    })}
+                </div>
             </div>
+        
         </div>
     )
 }
