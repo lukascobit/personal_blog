@@ -29,8 +29,8 @@ function Blog() {
                     console.log(d);
                     return(
                         <div onClick={()=>window.location = `/blog/${d.id}`} className="blog">
-                            <h3>{d.title}</h3>
                             <h3 className='blogPostedDate'>{d.posted_date}</h3>
+                            <h3>{d.title}</h3>
                             <p>{d.body}</p>
                         </div>
                     )

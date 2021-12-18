@@ -33,6 +33,7 @@ app.get("/blogs/:id", (req, res)=>{
     blogs.id,
     blogs.title, 
     blogs.body, 
+    blogs.posted_date,
     comments.id,
     comments.body AS comment_body
     FROM blogs

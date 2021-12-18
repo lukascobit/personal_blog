@@ -40,7 +40,7 @@ button{
   font-weight: 900;
 }
 .pfp{
-  width: 3vw;
+  width: 3vw; 
 }
 .pagesLinks{
   position: absolute;
@@ -72,6 +72,7 @@ button{
 }
 .blogPostedDate{
   float: right;
+  color: rgba(255, 255, 255, 0.459);
 }
 /*  */
 
@@ -85,7 +86,7 @@ button{
 .bigPfp{
   width: 10vw;
   padding: 1vw;
-}
+} 
 /*  */
 
 
@@ -99,7 +100,7 @@ button{
   background-color: rgb(31, 33, 37);
   font-weight: 100;
   font-style:oblique;
-}
+} 
 .halfTransparent{
   opacity: 0.5;
   padding: 1vw;

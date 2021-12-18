@@ -28,8 +28,8 @@ function SpecificBlog() {
         <div className='content'>
             <div className="blog">
                 <button onClick={()=>window.location = "/blog"}><img className='back' src={uparrow} alt="back" /></button>
-                <h1>{data && data[0].title}</h1>
                 <h2 className='blogPostedDate'>{data && data[0].posted_date}</h2>
+                <h1>{data && data[0].title}</h1>
                 <p>{data && data[0].body}</p>
                 <p className='halfTransparent'>comments</p>
                 <div className='comments'>
