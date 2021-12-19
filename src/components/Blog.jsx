@@ -26,7 +26,6 @@ function Blog() {
             <h1 className='pageName'>Blog</h1>
             {
                 data && data.map((d)=>{
-                    console.log(d);
                     return(
                         <div onClick={()=>window.location = `/blog/${d.id}`} className="blog">
                             <h3 className='blogPostedDate'>{d.posted_date}</h3>

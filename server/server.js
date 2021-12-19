@@ -18,7 +18,13 @@ db.connect()
 app.get("/blogs", (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    const sql = 'SELECT * FROM blogs;'
+    const sql = `
+    SELECT 
+    id,
+    title, 
+    body, 
+    DATE_FORMAT(posted_date, '%d/%m/%Y %H:%i') AS posted_date
+    FROM blogs;`
     db.query(sql, (err, result)=>{
         if(err) throw err;
         res.send(result)
@@ -33,8 +39,9 @@ app.get("/blogs/:id", (req, res)=>{
     blogs.id,
     blogs.title, 
     blogs.body, 
-    blogs.posted_date,
+    DATE_FORMAT(blogs.posted_date, '%d/%m/%Y %H:%i') AS posted_date,
     comments.id,
+    comments.username,
     comments.body AS comment_body
     FROM blogs
     LEFT JOIN comments

@@ -5,7 +5,7 @@ CREATE TABLE blogs(
     title VARCHAR(255),
     body VARCHAR(1000), 
     is_edited TINYINT(1),
-    posted_date DATETIME,
+    posted_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(id)
 );
 
@@ -46,4 +46,12 @@ ALTER TABLE blogs
 ALTER COLUMN posted_date
 
 
-INSERT INTO blogs(title, body, genre) VALUES('test', 'test input', 'test')
+INSERT INTO blogs(title, body, genre) VALUES('test', 'test input', 'test');
+INSERT INTO comments(blog_id, body, username) VALUES(3, 'test input', 'test user');
+
+
+ALTER TABLE blogs 
+    MODIFY posted_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL;
+
+ALTER TABLE blogs 
+MODIFY is_edited TINYINT(1) DEFAULT '0' NOT NULL;

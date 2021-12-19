@@ -16,6 +16,9 @@ function SpecificBlog() {
                 const jsonData = await response.json();
                 console.log(jsonData);
                 setData(jsonData)
+                if(jsonData.length === 0){
+                    window.location = "/blog"
+                }
             } catch (error) {
                 console.log(error);
             }
@@ -23,19 +26,21 @@ function SpecificBlog() {
         getBlogs()
     },[])
 
-
     return (
         <div className='content'>
             <div className="blog">
                 <button onClick={()=>window.location = "/blog"}><img className='back' src={uparrow} alt="back" /></button>
-                <h2 className='blogPostedDate'>{data && data[0].posted_date}</h2>
-                <h1>{data && data[0].title}</h1>
-                <p>{data && data[0].body}</p>
-                <p className='halfTransparent'>comments</p>
+                <h2 className='blogPostedDate'>{data[0] && data[0].posted_date}</h2>
+                <title>{data[0] && data[0].title}</title>
+                <h1>{data[0] && data[0].title}</h1>
+                <p>{data[0] && data[0].body}</p>
+                <p className='halfTransparent'>comments ({data.length})</p>
+                <button className='plusComment'>+</button>
                 <div className='comments'>
                     {data && data.map((d)=>{
                             return(
                                 <div className='comment'>
+                                    <h5>{d.username}</h5>
                                     <h4>{d.comment_body}</h4>
                                 </div>
                             )

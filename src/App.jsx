@@ -14,14 +14,15 @@ const userLang = navigator.language || navigator.userLanguage;
 
 
 function App() {
+  console.log(window.location.pathname);
   return (
     <>
     <div className="homeDiv">
       <a className="homeButton" href="/"><h1><img className="pfp" src={pfp} alt="" />Lukáš Odehnal</h1></a>
     </div>
     <div className="pagesLinks">  
-      <a className='pagesLink' href="/blog">blog</a>
-      <a className='pagesLink' href="/projects">projekty</a>
+      <a className={ window.location.pathname === "/blog" ? 'currentPagesLink' : 'pagesLink'} href="/blog">blog</a>
+      <a className={ window.location.pathname === "/projects" ? 'currentPagesLink' : 'pagesLink'} href="/projects">projekty</a>
     </div>
     <Router>
       <Switch>
