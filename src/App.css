@@ -125,5 +125,23 @@ button{
   border-radius: 20vw;
   font-size: 2vw;
   float: right;
+  padding: 0.3vw;
+}
+/*  */
+
+/* new comment page */
+#commentTextarea{
+  background-color: var(--blogHover);
+  color: white;
+  width: 80vw;
+  height: 20vw; 
+  font-size: 1vw;
+}
+.username{
+  background-color: var(--blogHover);
+  color: white;
+  margin: 1vw;
+  font-size: 1vw;
+  margin: 0 0 0.5vw 0;
 }
 /*  */

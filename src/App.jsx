@@ -10,6 +10,7 @@ import './App.css';
 import Projects from "./components/Projects";
 import Blog from "./components/Blog";
 import SpecificBlog from "./components/SpecificBlog";
+import AddComment from "./components/AddComment";
 const userLang = navigator.language || navigator.userLanguage;
 
 
@@ -32,8 +33,11 @@ function App() {
         <Route path="/blog" exact>
           <Blog/>
         </Route>
-        <Route path="/blog/:id">
+        <Route path="/blog/:id" exact>
           <SpecificBlog/>
+        </Route>
+        <Route path="/blog/:id/comment">
+          <AddComment/>
         </Route>
         <Route path="/" exact>
           <Home/>
