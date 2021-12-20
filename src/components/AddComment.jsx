@@ -1,11 +1,27 @@
 import React from 'react'
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { useState } from 'react/cjs/react.development'
 
 function AddComment() {
+    const serverDomain = "http://localhost:4000/"
+    const { id } = useParams()
     const [username, setUsername] = useState("")
     const [body, setBody] = useState("")
     function postComment(){
-        
+        fetch(serverDomain + "blogs/" + id, {
+            method: "post",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+
+            //make sure to serialize your JSON body
+            body: JSON.stringify({
+                id: id,
+                username: username,
+                body: body
+            })
+        })
     }
     
     return (

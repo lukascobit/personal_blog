@@ -1,9 +1,8 @@
 const express = require('express');
 const mysql = require('mysql')
 require('dotenv').config();
-
-
 const app = express()
+const cors = require("cors")
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -13,6 +12,12 @@ const db = mysql.createConnection({
 })
 
 db.connect()
+
+//middleware
+app.use(cors());
+app.use(express.json())
+
+
 
 //get all blogs
 app.get("/blogs", (req, res)=>{
@@ -35,7 +40,7 @@ app.get("/blogs/:id", (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     const sql = `
-    SELECT 
+    SELECT
     blogs.id,
     blogs.title, 
     blogs.body, 
@@ -52,8 +57,26 @@ app.get("/blogs/:id", (req, res)=>{
         res.send(result)
     })
 })
+app.post("/blogs/:id", (req, res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+    const post = req.body
+
+    console.log(req.body);
+    console.log(post);
+
+    const sql = `
+    INSERT INTO comments(blog_id, body, username) VALUES(?, ?, ?) ;
+    `
+    db.query(sql,[req.params.id, "dlkdsj","if this is here, then it works"], (err, result)=>{
+        if(err) throw err;
+        res.send(result)
+    })
+})
 
 const port = process.env.PORT
 app.listen(port , ()=>{
     console.log(`listening on port ${port}`);
+    
 })
