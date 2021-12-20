@@ -145,4 +145,7 @@ button{
   margin: 0 0 0.5vw 0;
   width: 70vw;
 }
+.error{
+  color: rgb(231, 37, 37);
+}
 /*  */

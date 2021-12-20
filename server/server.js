@@ -62,14 +62,11 @@ app.post("/blogs/:id", (req, res)=>{
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     const post = req.body
-
-    console.log(req.body);
     console.log(post);
-
     const sql = `
-    INSERT INTO comments(blog_id, body, username) VALUES(?, ?, ?) ;
+    INSERT INTO comments(blog_id, username, body) VALUES(?, ?, ?) ;
     `
-    db.query(sql,[req.params.id, "dlkdsj","if this is here, then it works"], (err, result)=>{
+    db.query(sql,[req.params.id,post.username, post.body], (err, result)=>{
         if(err) throw err;
         res.send(result)
     })
