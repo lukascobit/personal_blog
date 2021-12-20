@@ -34,7 +34,7 @@ function SpecificBlog() {
                 <title>{data[0] && data[0].title}</title>
                 <h1>{data[0] && data[0].title}</h1>
                 <p>{data[0] && data[0].body}</p>
-                <p className='halfTransparent'>komentáře ({data.length})</p>
+                <p className='halfTransparent'>komentáře ({data[0] && data[0].username ? data.length : "0"})</p>
                 <button onClick={()=>window.location = `/blog/${id}/comment`} className='plusComment'>+</button>
                 <div className='comments'>
                     {data && data.map((d)=>{

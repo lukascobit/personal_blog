@@ -35,6 +35,7 @@ app.get("/blogs", (req, res)=>{
         res.send(result)
     })
 });
+
 //get one blog
 app.get("/blogs/:id", (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
@@ -57,6 +58,8 @@ app.get("/blogs/:id", (req, res)=>{
         res.send(result)
     })
 })
+
+//add a comment
 app.post("/blogs/:id", (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

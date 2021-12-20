@@ -5,14 +5,15 @@ import { useState } from 'react/cjs/react.development'
 function AddComment() {
     const serverDomain = "http://localhost:4000/"
     const { id } = useParams()
-    const [username, setUsername] = useState("")
+    const [username, setUsername] = useState(localStorage.getItem("username"))
     const [body, setBody] = useState("")
     const [errorCode, setErrorCode] = useState("")
     async function postComment(){
         if(!username || !body ){
-            setErrorCode("Both the username and the comment have to be filled!")
+            setErrorCode("Komentář i přezdívka jsou povinná!")
             return
         }
+        localStorage.setItem("username", username)
         await fetch(serverDomain + "blogs/" + id, {
             method: "post",
             headers: {
@@ -29,10 +30,12 @@ function AddComment() {
     
     return (
         <div className='content'>
-            <h1>Add a comment</h1>
-            <input value={username} onChange={(e)=>setUsername(e.target.value)} className='username' type="text" placeholder='Your username...' autoFocus={true} /><br />
-            <textarea value={body} onChange={(e)=>setBody(e.target.value)} placeholder='Your comment...' name="comment" id="commentTextarea" cols="30" rows="10"></textarea>
+            <title>Přidat komentář</title>
+            <h1>Přidat komentář</h1>
+            <input value={username} onChange={(e)=>setUsername(e.target.value)} className='username' type="text" placeholder='Vaše přezdívka...' autoFocus={true} /><br />
+            <textarea value={body} onChange={(e)=>setBody(e.target.value)} placeholder='Váš komentář...' name="comment" id="commentTextarea" cols="30" rows="10"></textarea>
             <button onClick={postComment} className='plusComment'>send</button>
+            <button className='cancel'>cancel</button>
             <h3 className='error'>{errorCode}</h3>
         </div>
     )

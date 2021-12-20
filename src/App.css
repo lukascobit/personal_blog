@@ -28,6 +28,9 @@ button{
   color: white;
   border: 0.1vw white solid;
 }
+button:hover{
+  background-color: var(--blogHover);
+}
 
 /* top header bar */
 .homeButton{
@@ -136,6 +139,8 @@ button{
   width: 80vw;
   height: 20vw; 
   font-size: 1vw;
+  max-width: 90vw;
+  max-height: 30vw;
 }
 .username{
   background-color: var(--blogHover);
@@ -147,5 +152,8 @@ button{
 }
 .error{
   color: rgb(231, 37, 37);
+}
+.cancel{
+  font-size: 1vw;
 }
 /*  */
