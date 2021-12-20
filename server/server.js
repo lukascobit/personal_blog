@@ -75,6 +75,33 @@ app.post("/blogs/:id", (req, res)=>{
     })
 })
 
+//add a blog post
+app.post("/blogs/", (req, res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+    const post = req.body
+    console.log(post);
+    const sql = `
+    INSERT INTO blogs(title, body, genre) VALUES(?, ?, ?) ;
+    `
+    db.query(sql,[post.title, post.body, post.genre], (err, result)=>{
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
+//delete a post
+app.delete("blogs/:id"), (req, res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    const sql = `DELETE FROM blogs WHERE id = ?`
+    db.query(sql,[req.params.id], (err, result)=>{
+        if(err) throw err;
+        res.send(result)
+    })
+}
+
 const port = process.env.PORT
 app.listen(port , ()=>{
     console.log(`listening on port ${port}`);
