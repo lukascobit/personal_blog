@@ -40,18 +40,21 @@ app.get("/blogs", (req, res)=>{
 app.get("/blogs/:id", (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    console.log(req.body);
     const sql = `
     SELECT
     blogs.id,
     blogs.title, 
     blogs.body, 
     DATE_FORMAT(blogs.posted_date, '%d/%m/%Y %H:%i') AS posted_date,
-    comments.id,
+    comments.id AS comment_id,
     comments.username,
-    comments.body AS comment_body
+    comments.body AS comment_body,
+    replies.body AS reply_body,
+    replies.username AS reply_username
     FROM blogs
-    LEFT JOIN comments
-    ON blogs.id = comments.blog_id
+    LEFT JOIN comments ON blogs.id = comments.blog_id
+    LEFT JOIN replies ON comments.id = replies.comment_id
     WHERE blogs.id = ?;`
     db.query(sql,[req.params.id], (err, result)=>{
         if(err) throw err;
@@ -91,19 +94,10 @@ app.post("/blogs/", (req, res)=>{
     })
 })
 
-//delete a post
-app.delete("blogs/:id"), (req, res)=>{
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    const sql = `DELETE FROM blogs WHERE id = ?`
-    db.query(sql,[req.params.id], (err, result)=>{
-        if(err) throw err;
-        res.send(result)
-    })
-}
+
 
 const port = process.env.PORT
 app.listen(port , ()=>{
     console.log(`listening on port ${port}`);
     
-})
+}) 

@@ -31,6 +31,9 @@ button{
 button:hover{
   background-color: var(--blogHover);
 }
+.no{
+  display: none;
+}
 
 /* top header bar */
 .homeButton{
@@ -86,6 +89,12 @@ button:hover{
   float: right;
   color: rgba(255, 255, 255, 0.459);
 }
+.id{
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.425);
+}
 /*  */
 
 /* home page */
@@ -129,6 +138,13 @@ button:hover{
   font-size: 2vw;
   float: right;
   padding: 0.3vw;
+}
+.reply{
+  padding: 0.01vw 1vw;
+  background-color: var(--blogHover);
+}
+.comment_body{
+  padding: 1vw;
 }
 /*  */
 

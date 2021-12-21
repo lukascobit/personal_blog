@@ -31,6 +31,7 @@ function Blog() {
                             <h3 className='blogPostedDate'>{d.posted_date}</h3>
                             <h3>{d.title}</h3>
                             <p>{d.body}</p>
+                            <p className='id'>{d.id}</p>
                         </div>
                     )
                 })
