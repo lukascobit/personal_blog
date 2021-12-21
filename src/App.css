@@ -85,7 +85,7 @@ button:hover{
 .blog:hover{
   background-color: var(--blogHover);
 }
-.blogPostedDate{
+.date{
   float: right;
   color: rgba(255, 255, 255, 0.459);
 }

@@ -46,6 +46,7 @@ function SpecificBlog() {
                                     <div className={d.reply_body ? 'reply' : 'no'}>
                                         <h4>{d.reply_username || "Anonym"}</h4>
                                         <h4 className='comment_body'>{d.reply_body}</h4>
+                                        <h4 className='date'>{d.comment_date}</h4>
                                     </div>
                                 </div>
                             )

@@ -50,10 +50,34 @@ app.get("/blogs/:id", (req, res)=>{
     comments.id AS comment_id,
     comments.username,
     comments.body AS comment_body,
+    comments.posted_date AS comment_date,
     replies.body AS reply_body,
     replies.username AS reply_username
     FROM blogs
     LEFT JOIN comments ON blogs.id = comments.blog_id
+    LEFT JOIN replies ON comments.id = replies.comment_id
+    WHERE blogs.id = ?;`
+    db.query(sql,[req.params.id], (err, result)=>{
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
+//get one comment
+app.get("/comments/:id", (req, res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    console.log(req.body);
+    const sql = `
+    SELECT
+    comments.id AS comment_id,
+    comments.username,
+    comments.body AS comment_body,
+    comments.posted_date,
+    replies.body AS reply_body,
+    replies.username AS reply_username,
+    replies.posted_date AS reply_date
+    FROM comments
     LEFT JOIN replies ON comments.id = replies.comment_id
     WHERE blogs.id = ?;`
     db.query(sql,[req.params.id], (err, result)=>{
