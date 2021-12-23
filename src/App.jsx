@@ -11,7 +11,6 @@ import Projects from "./components/Projects";
 import Blog from "./components/Blog";
 import SpecificBlog from "./components/SpecificBlog";
 import AddComment from "./components/AddComment";
-import SpecifiComment from "./components/SpecificComment";
 const userLang = navigator.language || navigator.userLanguage;
 
 
@@ -39,9 +38,6 @@ function App() {
         </Route>
         <Route path="/blog/:id/addcomment">
           <AddComment/>
-        </Route>
-        <Route path="/blog/:id/comment">
-            <SpecifiComment/>
         </Route>
         <Route path="/" exact>
           <Home/>

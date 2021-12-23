@@ -38,8 +38,9 @@ function SpecificBlog() {
                 <button onClick={()=>window.location = `/blog/${id}/addcomment`} className='plusComment'>+</button>
                 <div className='comments'>
                     {data && data.map((d)=>{
+                        console.log(d);
                             return(
-                                <div onClick={()=>window.location = `/blog/1/comment/${d.id}`} className='comment'>
+                                <div onClick={()=>window.location = `/blog/${data[0].id}/comment/${d.comment_id}`} className='comment'>
                                     <h5>{d.username || "Anonym"}</h5>
                                     <h4>{d.comment_body}</h4>
                                     <br />
