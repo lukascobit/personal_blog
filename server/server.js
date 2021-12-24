@@ -50,7 +50,7 @@ app.get("/blogs/:id", (req, res)=>{
     comments.id AS comment_id,
     comments.username,
     comments.body AS comment_body,
-    comments.posted_date AS comment_date
+    DATE_FORMAT(comments.posted_date, '%d/%m/%Y %H:%i') AS comment_date
     FROM blogs
     LEFT JOIN comments ON blogs.id = comments.blog_id
     WHERE blogs.id = ?;`
