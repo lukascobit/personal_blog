@@ -40,10 +40,9 @@ function SpecificBlog() {
                         console.log(d);
                             return(
                                 <div className='comment'>
-                                    <h4 className='date'>{d.comment_date}</h4>
+                                    <h4 className='date  '>{d.comment_date}</h4>
                                     <h5>{d.username || "Anonym"}</h5>
                                     <h4>{d.comment_body}</h4>
-                                    
                                 </div>
                             )
                     })}
@@ -55,3 +54,4 @@ function SpecificBlog() {
 }
 
 export default SpecificBlog;
+    

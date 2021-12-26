@@ -61,7 +61,6 @@ app.get("/blogs/:id", (req, res)=>{
 })
 
 
-
 //add a comment
 app.post("/blogs/:id", (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
@@ -93,6 +92,24 @@ app.post("/blogs/", (req, res)=>{
         res.send(result)
     })
 })
+
+//projekty
+app.get("/projects", (req, res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    const sql = `
+    SELECT 
+    id,
+    project_name, 
+    body, 
+    link,
+    DATE_FORMAT(posted_date, '%d/%m/%Y %H:%i') AS posted_date
+    FROM blogs;`
+    db.query(sql, (err, result)=>{
+        if(err) throw err;
+        res.send(result)
+    })
+});
 
 
 

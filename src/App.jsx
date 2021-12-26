@@ -27,7 +27,7 @@ function App() {
     </div>
     <Router>
       <Switch>
-        <Route path="/projects">
+        <Route path="/projekty">
           <Projects/>
         </Route>
         <Route path="/blog" exact>

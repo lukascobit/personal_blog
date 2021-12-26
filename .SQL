@@ -40,6 +40,14 @@ CREATE TABLE replies(
     FOREIGN KEY(blog_id) REFERENCES blogs(id)
 );
 
+CREATE TABLE projects(
+    id INT AUTO_INCREMENT,
+    project_name VARCHAR(255),
+    body VARCHAR(1000),
+    link VARCHAR(500),
+    posted_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
+);
 
 
 ALTER TABLE blogs
@@ -48,6 +56,7 @@ ALTER COLUMN posted_date
 
 INSERT INTO blogs(title, body, genre) VALUES('test', 'test input', 'test');
 INSERT INTO comments(blog_id, body, username) VALUES(3, 'test input', 'test user');
+INSERT INTO projects(project_name, body, link) VALUES('howeler', 'this site sucks and doesnt work', 'howeler.netlify.app');
 
 
 ALTER TABLE blogs 
