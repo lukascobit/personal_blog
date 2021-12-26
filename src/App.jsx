@@ -11,7 +11,8 @@ import Projects from "./components/Projects";
 import Blog from "./components/Blog";
 import SpecificBlog from "./components/SpecificBlog";
 import AddComment from "./components/AddComment";
-const userLang = navigator.language || navigator.userLanguage;
+import SpecificProject from "./components/SpecificProject";
+// const userLang = navigator.language || navigator.userLanguage;
 
 
 function App() {
@@ -27,8 +28,11 @@ function App() {
     </div>
     <Router>
       <Switch>
-        <Route path="/projekty">
+        <Route path="/projekty" exact>
           <Projects/>
+        </Route>
+        <Route path="/projekty/:id" exact>
+          <SpecificProject/>
         </Route>
         <Route path="/blog" exact>
           <Blog/>

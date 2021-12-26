@@ -39,8 +39,8 @@ function SpecificBlog() {
                     {data && data.map((d)=>{
                         console.log(d);
                             return(
-                                <div className='comment'>
-                                    <h4 className='date  '>{d.comment_date}</h4>
+                                <div key={d.id} className='comment'>
+                                    <h4 className='date'>{d.comment_date}</h4>
                                     <h5>{d.username || "Anonym"}</h5>
                                     <h4>{d.comment_body}</h4>
                                 </div>
