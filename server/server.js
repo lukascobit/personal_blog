@@ -100,11 +100,11 @@ app.get("/projects", (req, res)=>{
     const sql = `
     SELECT 
     id,
-    project_name, 
+    project_name,
     body, 
     link,
     DATE_FORMAT(posted_date, '%d/%m/%Y %H:%i') AS posted_date
-    FROM blogs;`
+    FROM projects;`
     db.query(sql, (err, result)=>{
         if(err) throw err;
         res.send(result)

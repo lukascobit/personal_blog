@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react/cjs/react.development';
 
 function Projects() {
+    const serverDomain = "http://localhost:4000/"
+    
     const [data, setData] = useState("")
 
     useEffect(()=>{
-        async function getBlogs(){
+        async function getProjects(){
             try {
-                const response = await fetch(serverDomain + "blogs");
+                const response = await fetch(serverDomain + "projects");
                 const jsonData = await response.json();
                 setData(jsonData);
                 console.log(jsonData);
@@ -14,17 +17,25 @@ function Projects() {
                 console.log(error);
             }
         }
-        getBlogs()
+        getProjects()
     },[])
+
     return (
         <div>
             <title>Projekty</title>
             <h1 className='pageName'>Projekty</h1>
             <div className='content'>
-                <div onClick={()=>window.location = `/projekty/${d.id}`} className='project'>
-                    <h1>Pexeso</h1>
-                    <p>Tohle je pexeso</p>
-                </div>
+            {
+                data && data.map((d)=>{
+                    return(
+                        <div onClick={()=>window.location = `/projekty/${d.id}`} className='blog'>
+                            <h1>Pexeso</h1>
+                            <p>Tohle je pexeso</p>
+                        </div>
+                    )
+                })
+            }
+
             </div>
         </div>
     )
