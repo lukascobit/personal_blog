@@ -33,7 +33,7 @@ CREATE TABLE replies(
     id INT AUTO_INCREMENT,
     comment_id INT,
     blog_id INT,
-    body VARCHAR(1000),
+    body VARCHAR(50000),
     posted_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(id),
     FOREIGN KEY(comment_id) REFERENCES comments(id),

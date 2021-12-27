@@ -12,6 +12,9 @@ function AddComment() {
         if(!username || !body ){
             setErrorCode("Komentář i přezdívka jsou povinná!")
             return
+        }else if(body.length > 10000){
+            setErrorCode("Komentář je moc dlouhý!")
+            return
         }
         localStorage.setItem("username", username)
         await fetch(serverDomain + "blogs/" + id, {

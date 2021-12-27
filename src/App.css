@@ -124,6 +124,21 @@ button:hover{
   font-style:oblique;
   word-break: break-all;
 }
+.longComment{
+  inline-size: 85vw;
+  margin: 1vw;
+  padding: 0.5vw;
+  background-color: rgb(31, 33, 37);
+  font-weight: 100;
+  font-style:oblique;
+  word-break: break-all;
+  overflow: hidden;
+  height: 10vw;
+}
+.longComment:hover{
+  height: auto;
+  overflow: scroll;
+}
 .halfTransparent{
   opacity: 0.5;
   padding: 1vw;
