@@ -111,7 +111,7 @@ app.get("/projects", (req, res)=>{
 });
 
 //get one project
-app.get("/blogs/:id", (req, res)=>{
+app.get("/projects/:id", (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     console.log(req.body);
@@ -123,7 +123,7 @@ app.get("/blogs/:id", (req, res)=>{
     link,
     DATE_FORMAT(posted_date, '%d/%m/%Y %H:%i') AS posted_date
     FROM projects
-    WHERE id = ?y;`
+    WHERE id = ?;`
     db.query(sql,[req.params.id], (err, result)=>{
         if(err) throw err;
         res.send(result)

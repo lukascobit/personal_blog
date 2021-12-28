@@ -10,12 +10,10 @@ function SpecificProject() {
         async function getProject(){
             try {
                 const response = await fetch(serverDomain + `projects/${id}`);
+                console.log(response    );
                 const jsonData = await response.json();
                 console.log(jsonData);
                 setData(jsonData)
-                if(jsonData.length === 0){
-                    window.location = "/blog"
-                }
             } catch (error) {
                 console.log(error);
             }
@@ -24,8 +22,8 @@ function SpecificProject() {
     },[])
     return (
         <div className='content'>
-            <title></title>
-            <h1 className='pageName'>{id}</h1>
+            <title>{data.project_name}</title>
+            <h1 className='pageName'>{data.name}</h1>dfs
            
         </div>
     )
