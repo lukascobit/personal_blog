@@ -102,7 +102,6 @@ app.get("/projects", (req, res)=>{
     id,
     project_name,
     body, 
-    link,
     DATE_FORMAT(posted_date, '%d/%m/%Y %H:%i') AS posted_date
     FROM projects;`
     db.query(sql, (err, result)=>{
@@ -111,10 +110,30 @@ app.get("/projects", (req, res)=>{
     })
 });
 
+//get one project
+app.get("/blogs/:id", (req, res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    console.log(req.body);
+    const sql = `
+    SELECT
+    id,
+    project_name,
+    body,
+    link,
+    DATE_FORMAT(posted_date, '%d/%m/%Y %H:%i') AS posted_date
+    FROM projects
+    WHERE id = ?y;`
+    db.query(sql,[req.params.id], (err, result)=>{
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
 
 
 const port = process.env.PORT
 app.listen(port , ()=>{
     console.log(`listening on port ${port}`);
     
-}) 
+})

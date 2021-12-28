@@ -9,7 +9,7 @@ function SpecificBlog() {
     const [data, setData] = useState("")
 
     useEffect(()=>{
-        async function getBlogs(){
+        async function getBlog(){
             try {
                 const response = await fetch(serverDomain + `blogs/${id}`);
                 const jsonData = await response.json();
@@ -22,7 +22,7 @@ function SpecificBlog() {
                 console.log(error);
             }
         }
-        getBlogs()
+        getBlog()
     },[])
 
     return (
