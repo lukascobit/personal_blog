@@ -40,7 +40,6 @@ app.get("/blogs", (req, res)=>{
 app.get("/blogs/:id", (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    console.log(req.body);
     const sql = `
     SELECT
     blogs.id,
@@ -67,7 +66,6 @@ app.post("/blogs/:id", (req, res)=>{
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     const post = req.body
-    console.log(post);
     const sql = `
     INSERT INTO comments(blog_id, username, body) VALUES(?, ?, ?) ;
     `
@@ -83,7 +81,6 @@ app.post("/blogs/", (req, res)=>{
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     const post = req.body
-    console.log(post);
     const sql = `
     INSERT INTO blogs(title, body, genre) VALUES(?, ?, ?) ;
     `
@@ -114,7 +111,6 @@ app.get("/projects", (req, res)=>{
 app.get("/projects/:id", (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    console.log(req.body);
     const sql = `
     SELECT
     id,

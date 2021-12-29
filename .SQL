@@ -56,7 +56,7 @@ ALTER COLUMN posted_date
 
 INSERT INTO blogs(title, body, genre) VALUES('test', 'test input', 'test');
 INSERT INTO comments(blog_id, body, username) VALUES(3, 'test input', 'test user');
-INSERT INTO projects(project_name, body, link) VALUES('ohnokey', 'this site sucks and doesnt work', 'ohnokey.netlify.app');
+INSERT INTO projects(project_name, body, link) VALUES('Crabgrab', 'a game where you catch aliens', 'crabgrab.netlify.app');
 
 
 ALTER TABLE blogs 

@@ -10,10 +10,9 @@ function SpecificProject() {
         async function getProject(){
             try {
                 const response = await fetch(serverDomain + `projects/${id}`);
-                console.log(response    );
                 const jsonData = await response.json();
                 console.log(jsonData);
-                setData(jsonData)
+                setData(jsonData[0])
             } catch (error) {
                 console.log(error);
             }
@@ -22,9 +21,11 @@ function SpecificProject() {
     },[])
     return (
         <div className='content'>
-            <title>{data.project_name}</title>
-            <h1 className='pageName'>{data.name}</h1>dfs
-           
+            <title>{data && data.project_name}</title>
+            <a className='projectName' href={`https://${data && data.link}`}><h1 className='pageName'>{data && data.project_name}</h1></a>
+            <p className='center'>{data && data.body}</p>
+            
+            <iframe src={`https://${data && data.link}`} frameborder="1"></iframe>
         </div>
     )
 }

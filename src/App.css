@@ -34,7 +34,14 @@ button:hover{
 .no{
   display: none;
 }
-
+iframe{
+  left: 1vw;
+  position:absolute;
+  padding: 0;
+  margin: 0;
+  width: 95vw;
+  height: 40vw;
+}
 /* top header bar */
 .homeButton{
   text-decoration: none;
@@ -70,7 +77,7 @@ button:hover{
   padding: none;
 }
 .pageName{
-  margin: 2vw;
+  margin: 1vw;
   text-align: center;
 }
 /*  */
@@ -196,4 +203,14 @@ button:hover{
 .favicons{
   font-size: 3vw;
   padding: 0.3vw;
+}
+
+/* specific project */
+.center{
+  text-align: center;
+  padding: 0;
+}
+.projectName{
+  padding: 0;
+  margin: 0;
 }
