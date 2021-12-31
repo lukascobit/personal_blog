@@ -99,6 +99,7 @@ app.get("/projects", (req, res)=>{
     id,
     project_name,
     body, 
+    link,
     DATE_FORMAT(posted_date, '%d/%m/%Y %H:%i') AS posted_date
     FROM projects;`
     db.query(sql, (err, result)=>{
