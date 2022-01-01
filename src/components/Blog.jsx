@@ -5,6 +5,7 @@ const serverDomain = "http://localhost:4000/"
 
 function Blog() {
     const [data, setData] = useState("")
+    
 
     useEffect(()=>{
         async function getBlogs(){

@@ -64,3 +64,22 @@ ALTER TABLE blogs
 
 ALTER TABLE blogs 
 MODIFY is_edited TINYINT(1) DEFAULT '0' NOT NULL;
+
+
+
+--delete duplicates
+DELETE t1 FROM projects t1
+INNER JOIN projects t2 
+WHERE 
+    t1.id < t2.id AND 
+    t1.project_name = t2.project_name;
+
+
+SELECT 
+    project_name, COUNT(project_name)
+FROM
+    projects
+GROUP BY 
+    project_name
+HAVING 
+    COUNT(project_name) > 1;

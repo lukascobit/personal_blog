@@ -84,6 +84,7 @@ iframe{
 
 /* blog page */
 .blog{
+  line-height: 0.8vw;
   background-color: var(--blog);
   padding: 0.4vw;
   margin:1vw;
@@ -213,4 +214,7 @@ iframe{
 .projectName{
   padding: 0;
   margin: 0;
+}
+.fullscreenButton{
+  float: right;
 }

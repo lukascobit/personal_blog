@@ -25,7 +25,8 @@ function SpecificProject() {
             <a className='projectName' href={`https://${data && data.link}`}><h1 className='pageName'>{data && data.project_name}</h1></a>
             <p className='center'>{data && data.body}</p>
             
-            <iframe src={`https://${data && data.link}`} frameborder="1"></iframe>
+            <button className='fullscreenButton'>fullscreen</button>
+            <iframe title={data && data.project_name} src={`https://${data && data.link}`} frameborder="1"></iframe>
         </div>
     )
 }
