@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react/cjs/react.development';
+import fullscreen from './imgs/fullscreen.png'
 
 function SpecificProject() {
     const serverDomain = "http://localhost:4000/"
@@ -25,7 +26,7 @@ function SpecificProject() {
             <a className='projectName' href={`https://${data && data.link}`}><h1 className='pageName'>{data && data.project_name}</h1></a>
             <p className='center'>{data && data.body}</p>
             
-            <button className='fullscreenButton'>fullscreen</button>
+            <button className='fullscreenButton'><img className='fullscreenImg' src={fullscreen} alt="" /></button>
             <iframe title={data && data.project_name} src={`https://${data && data.link}`} frameborder="1"></iframe>
         </div>
     )

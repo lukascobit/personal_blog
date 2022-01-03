@@ -216,5 +216,11 @@ iframe{
   margin: 0;
 }
 .fullscreenButton{
-  float: right;
+  position: fixed;
+  top: 9vw;
+  right: 2vw;
+  z-index: 99;
+}
+.fullscreenImg{
+  width: 1vw;
 }
