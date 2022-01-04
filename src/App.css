@@ -224,3 +224,17 @@ iframe{
 .fullscreenImg{
   width: 1vw;
 }
+.fullscreenIframe{
+  top: 0;
+  left: 0;
+  position: absolute;
+  margin: 0px; 
+  padding: 0px; 
+  height: 100%; 
+  border: none;
+  display: block; 
+  width: 100%; 
+  border: none; 
+  overflow-y: auto; 
+  overflow-x: hidden;
+}
