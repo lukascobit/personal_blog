@@ -23,7 +23,7 @@ function App() {
     </div>
     <div className="pagesLinks">  
       <a className={ window.location.pathname === "/blog" ? 'currentPagesLink' : 'pagesLink'} href="/blog">blog</a>
-      <a className={ window.location.pathname === "/projects" ? 'currentPagesLink' : 'pagesLink'} href="/projekty">projekty</a>
+      <a className={ window.location.pathname === "/projekty" ? 'currentPagesLink' : 'pagesLink'} href="/projekty">projekty</a>
     </div>
     <Router>
       <Switch>
