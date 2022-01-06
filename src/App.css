@@ -70,11 +70,21 @@ iframe{
   padding: none;
 }
 .pagesLink{
-  font: 1vw;
+  font-size: 1vw;
 }
 .pagesLink:hover{
-  font-weight: 1000;
+  animation-name: turnBold;
+  animation-duration: 1s;
   padding: none;
+  font-weight: 1000;
+}
+@keyframes turnBold {
+  from {
+    font-size: 1vw;
+  }
+  to {
+    font-size: 1.1vw;
+  }
 }
 .pageName{
   margin: 1vw;

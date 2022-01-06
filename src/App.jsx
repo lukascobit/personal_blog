@@ -12,7 +12,6 @@ import Blog from "./components/Blog";
 import SpecificBlog from "./components/SpecificBlog";
 import AddComment from "./components/AddComment";
 import SpecificProject from "./components/SpecificProject";
-// const userLang = navigator.language || navigator.userLanguage;
 
 
 function App() {
