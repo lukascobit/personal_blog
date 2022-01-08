@@ -15,7 +15,6 @@ import SpecificProject from "./components/SpecificProject";
 
 
 function App() {
-  console.log(window.location.pathname);
   return (
     <>
     <div className="homeDiv">
