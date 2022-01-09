@@ -56,11 +56,12 @@ iframe{
   font-weight: 900;
 }
 .pfp{
-  width: 3vw; 
+  width: 3vw;
 }
 .pagesLinks{
   position: absolute;
   top: 1vw;
+  font-size: 1vw;
   right: 1vw;
   font: bold;
   float: right;
@@ -88,7 +89,7 @@ iframe{
   }
 }
 .pageName{
-  margin: 1vw;
+  margin: 2vw 0 0 0;
   text-align: center;
 }
 /*  */
@@ -126,7 +127,7 @@ iframe{
 .bigPfp{
   width: 10vw;
   padding: 1vw;
-} 
+}
 /*  */
 
 
@@ -189,7 +190,7 @@ iframe{
   background-color: var(--blogHover);
   color: white;
   width: 80vw;
-  height: 20vw; 
+  height: 20vw;
   font-size: 1vw;
   max-width: 90vw;
   max-height: 30vw;
@@ -231,6 +232,7 @@ iframe{
   top: 9vw;
   right: 2vw;
   z-index: 99;
+  border-radius: 0.1vw;
 }
 .fullscreenImg{
   width: 1vw;
@@ -239,13 +241,26 @@ iframe{
   top: 0;
   left: 0;
   position: absolute;
-  margin: 0px; 
-  padding: 0px; 
-  height: 100%; 
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
   border: none;
-  display: block; 
-  width: 100%; 
-  border: none; 
-  overflow-y: auto; 
+  display: block;
+  width: 100%;
+  border: none;
+  overflow-y: auto;
   overflow-x: hidden;
+}
+
+@media only screen and (max-width: 850px) {
+  .homeDiv{
+    top: -5vw;
+  }
+  .pagesLink{
+    font-size: 2vw;
+  }
+  .currentPagesLink{
+    font-size: 3vw;
+    margin: 1vw;
+  }
 }

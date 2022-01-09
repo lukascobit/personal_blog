@@ -37,11 +37,11 @@ function AddComment() {
             <h1>Přidat komentář</h1>
             <input value={username} onChange={(e)=>setUsername(e.target.value)} className='username' type="text" placeholder='Vaše přezdívka...' autoFocus={true} /><br />
             <textarea value={body} onChange={(e)=>setBody(e.target.value)} placeholder='Váš komentář...' name="comment" id="commentTextarea" cols="30" rows="10"></textarea>
-            <button onClick={postComment} className='plusComment'>send</button>
-            <button className='cancel'>cancel</button>
+            <button onClick={postComment} className='plusComment'>poslat</button>
+            <button className='cancel'>zrušit</button>
             <h3 className='error'>{errorCode}</h3>
         </div>
     )
 }
 
-export default AddComment
+export default AddComment;
