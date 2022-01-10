@@ -19,6 +19,7 @@ function App() {
     <>
     <div className="homeDiv">
       <a className="homeButton" href="/"><h1><img className="pfp" src={pfp} alt="" />Lukáš Odehnal</h1></a>
+      <a href="/"><img className="mobilePfp" src={pfp} alt="" /></a>
     </div>
     <div className="pagesLinks">  
       <a className={ window.location.pathname === "/blog" ? 'currentPagesLink' : 'pagesLink'} href="/blog">blog</a>

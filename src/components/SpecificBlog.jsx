@@ -13,7 +13,6 @@ function SpecificBlog() {
             try {
                 const response = await fetch(serverDomain + `blogs/${id}`);
                 const jsonData = await response.json();
-                console.log(jsonData);
                 setData(jsonData)
                 if(jsonData.length === 0){
                     window.location = "/blog"
@@ -27,11 +26,11 @@ function SpecificBlog() {
 
     return (
         <div className='content'>
-            <div className="blog">
+            <div className="specificB0log">
                 <h2 className='date'>{data[0] && data[0].posted_date}</h2>
                 <title>{data[0] && data[0].title}</title>
 
-                <article>
+                <article className='SpecifigBlogBody'>
                     <h1>{data[0] && data[0].title}</h1>
                     <p>{data[0] && data[0].body}</p>
                 </article>
@@ -40,9 +39,8 @@ function SpecificBlog() {
                 <button onClick={()=>window.location = `/blog/${id}/addcomment`} className='plusComment'>+</button>
                 <div className={data[0] && data[0].comment_body ? 'comments' : "no"}>
                     {data && data.map((d)=>{
-                        console.log(d);
                             return(
-                                <div key={d.id} className={d.comment_body && d.comment_body.length < 500 ? 'comment' : "longComment"}>
+                                <div key={d.comment_id} className={d.comment_body && d.comment_body.length < 150 ? 'comment' : "longComment"}>
                                     <h4 className='date'>{d.comment_date}</h4>
                                     <h5>{d.username || "Anonym"}</h5>
                                     <h4>{d.comment_body}</h4>
