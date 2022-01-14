@@ -282,6 +282,8 @@ iframe{
     background-color: var(--blog);
     padding: 0.4vw;
     border-radius: 0.3vw;
+    height: 50vw;
+    line-height: 10vw;
   }
   .comment{
     height: 20vw;
@@ -291,5 +293,11 @@ iframe{
   .longComment{
     height: 40vw;
     line-height: 5vw;
+  }
+  .pagesLink{
+    font-size: 5vw;
+  }
+  .date{
+    display: none;
   }
 }
