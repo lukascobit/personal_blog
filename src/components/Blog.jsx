@@ -37,7 +37,7 @@ function Blog() {
                     )
                 })
             }
-            <h1>{!data && "Server is offline!"}</h1>
+            <h1>{!data && "Server je offline!"}</h1>
 
         </div>
     )

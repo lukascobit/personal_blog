@@ -5,10 +5,10 @@ const app = express()
 const cors = require("cors")
 
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "lukas",
+    host: "sql11.freemysqlhosting.net",
+    user: "sql11465847",
     password: process.env.PASSWORD,
-    database: "test0"
+    database: "sql11465847"
 })
 
 db.connect()

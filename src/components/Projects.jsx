@@ -35,6 +35,7 @@ function Projects() {
                     )
                 })
             }
+            <h1>{!data && "Server je offline!"}</h1>
 
             </div>
         </div>
