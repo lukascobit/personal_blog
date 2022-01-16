@@ -8,7 +8,7 @@ function SpecificProject() {
     const [imgSrc, setImgSrc] = useState(fullscreen)
     const [isFullScreen, setIsFullscreen] = useState(false)
     const iframeRef =  useRef()
-    const serverDomain = "http://localhost:4000/"
+    const serverDomain = "https://lukas-backend.herokuapp.com/"
     const { id } = useParams()
     const [data, setData] = useState("")
     useEffect(()=>{

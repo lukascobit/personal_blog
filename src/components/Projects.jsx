@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react/cjs/react.development';
 
 function Projects() {
-    const serverDomain = "http://localhost:4000/"
+    const serverDomain = "https://lukas-backend.herokuapp.com/"
     
     const [data, setData] = useState("")
 

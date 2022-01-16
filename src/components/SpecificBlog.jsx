@@ -4,7 +4,7 @@ import { useState } from 'react/cjs/react.development'
 
 
 function SpecificBlog() {
-    const serverDomain = "http://localhost:4000/"
+    const serverDomain = "https://lukas-backend.herokuapp.com/"
     const { id } = useParams()
     const [data, setData] = useState("")
 

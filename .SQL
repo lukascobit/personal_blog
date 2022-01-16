@@ -29,16 +29,16 @@ LEFT JOIN comments
 ON blogs.id = comments.blog_id
 WHERE blogs.id = 1;
 
-CREATE TABLE replies(
-    id INT AUTO_INCREMENT,
-    comment_id INT,
-    blog_id INT,
-    body VARCHAR(50000),
-    posted_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY(id),
-    FOREIGN KEY(comment_id) REFERENCES comments(id),
-    FOREIGN KEY(blog_id) REFERENCES blogs(id)
-);
+-- CREATE TABLE replies(
+--     id INT AUTO_INCREMENT,
+--     comment_id INT,
+--     blog_id INT,
+--     body VARCHAR(50000),
+--     posted_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+--     PRIMARY KEY(id),
+--     FOREIGN KEY(comment_id) REFERENCES comments(id),
+--     FOREIGN KEY(blog_id) REFERENCES blogs(id)
+-- );
 
 CREATE TABLE projects(
     id INT AUTO_INCREMENT,
