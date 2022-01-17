@@ -252,6 +252,20 @@ iframe {
 .mobilePfp {
   display: none;
 }
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  
+
+  /* making it gray */
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
 
 @media only screen and (max-width: 850px) {
   .homeDiv {

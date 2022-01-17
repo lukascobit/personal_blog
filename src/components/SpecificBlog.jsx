@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { useState } from 'react/cjs/react.development'
+import loading from "./imgs/loading.gif"
+
 
 
 function SpecificBlog() {
@@ -49,7 +51,8 @@ function SpecificBlog() {
                     })}
                 </div>
             </div>
-        
+            <img src={!data ? loading : undefined} alt="" className="spinner" />
+                    
         </div>
     )
 }

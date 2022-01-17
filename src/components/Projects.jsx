@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react/cjs/react.development';
+import loading from "./imgs/loading.gif"
+
 
 function Projects() {
     const serverDomain = "https://lukas-backend.herokuapp.com/"
@@ -35,7 +37,8 @@ function Projects() {
                     )
                 })
             }
-            <h1>{!data && "Server je offline!"}</h1>
+            <img src={!data && loading} alt="" className="spinner" />
+
 
             </div>
         </div>

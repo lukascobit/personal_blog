@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import loading from "./imgs/loading.gif"
 
 const serverDomain = "https://lukas-backend.herokuapp.com/";
 
@@ -38,7 +39,7 @@ function Blog() {
             </div>
           );
         })}
-      <h1>{!data && "Server je offline!"}</h1>
+      <img src={!data && loading} alt="" className="spinner" />
     </div>
   );
 }

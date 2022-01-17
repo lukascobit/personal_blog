@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { useState, useRef } from 'react/cjs/react.development';
 import fullscreen from './imgs/fullscreen.png'
 import exitFull from './imgs/exitFull.png'
+import loading from "./imgs/loading.gif"
+
 
 function SpecificProject() {
     const [imgSrc, setImgSrc] = useState(fullscreen)
@@ -45,6 +47,9 @@ function SpecificProject() {
             <p className='center'>{data && data.body}</p>
             <button title='Přepnout na celou obrazovku' onClick={changeFullScreen} className='fullscreenButton'><img className='fullscreenImg' src={imgSrc} alt="" /></button>
             <iframe className='' ref={iframeRef} title={data && data.project_name} src={`https://${data && data.link}`} frameBorder="1"></iframe>
+
+            <img src={!data && loading} alt="" className="spinner" />
+
         </div>
     )
 }
