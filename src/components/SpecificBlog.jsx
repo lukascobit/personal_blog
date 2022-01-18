@@ -51,7 +51,7 @@ function SpecificBlog() {
                     })}
                 </div>
             </div>
-            <img src={!data ? loading : undefined} alt="" className="spinner" />
+            <img src={!data ? loading : undefined   } alt="" className="spinner" />
                     
         </div>
     )
