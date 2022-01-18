@@ -4,7 +4,7 @@ import loading from "./imgs/loading.gif"
 const serverDomain = "https://lukas-backend.herokuapp.com/";
 
 function Blog() {
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     async function getBlogs() {

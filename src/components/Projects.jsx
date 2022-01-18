@@ -5,12 +5,13 @@ import loading from "./imgs/loading.gif"
 
 function Projects() {
     const serverDomain = "https://lukas-backend.herokuapp.com/"    
-    const [data, setData] = useState()
+    const [data, setData] = useState([])
 
     useEffect(()=>{
         async function getProjects(){
             try {
                 const response = await fetch(serverDomain + "projects");
+                console.log();
                 const jsonData = await response.json();
                 setData(jsonData);
             } catch (error) {
