@@ -4,9 +4,8 @@ import loading from "./imgs/loading.gif"
 
 
 function Projects() {
-    const serverDomain = "https://lukas-backend.herokuapp.com/"
-    
-    const [data, setData] = useState("")
+    const serverDomain = "https://lukas-backend.herokuapp.com/"    
+    const [data, setData] = useState()
 
     useEffect(()=>{
         async function getProjects(){
