@@ -1,13 +1,13 @@
-import React from "react";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import { useState } from "react/cjs/react.development";
+import React, {useParams, useState} from "react";
 
 
 function AddComment() {
+  
   const serverDomain = "https://lukas-backend.herokuapp.com/";
   const { id } = useParams();
   const [body, setBody] = useState("");
   const [errorCode, setErrorCode] = useState("");
+
   async function postComment() {
     if (!body) {
       setErrorCode("Komentář i přezdívka jsou povinná!");

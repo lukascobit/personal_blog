@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
-import { useState } from 'react/cjs/react.development'
+import React, { useEffect, useParams, useState } from 'react'
 import loading from "./imgs/loading.gif"
 
 

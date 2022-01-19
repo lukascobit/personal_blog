@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react/cjs/react.development';
+import React, { useState, useEffect } from 'react'
 import loading from "./imgs/loading.gif"
 
 
 function Projects() {
     const serverDomain = "https://lukas-backend.herokuapp.com/"    
-    console.log(useState);
     const [data, setData] = useState([])
-    console.log([data, setData]);
 
     useEffect(()=>{
         async function getProjects(){
