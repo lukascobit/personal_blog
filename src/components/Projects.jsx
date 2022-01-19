@@ -5,6 +5,7 @@ import loading from "./imgs/loading.gif"
 
 function Projects() {
     const serverDomain = "https://lukas-backend.herokuapp.com/"    
+    console.log(useState);
     const [data, setData] = useState([])
     console.log([data, setData]);
 

@@ -5,7 +5,7 @@ const serverDomain = "https://lukas-backend.herokuapp.com/";
 
 function Blog() {
   const [data, setData] = useState([]);
-  console.log(data, setData);
+  console.log(data,setData);
 
   useEffect(() => {
     async function getBlogs() {
