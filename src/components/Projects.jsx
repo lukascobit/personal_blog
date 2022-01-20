@@ -35,7 +35,7 @@ function Projects() {
                     )
                 })
             }
-            <img src={!data && loading} alt="" className="spinner" />
+            <img src={!data ? loading : undefined} alt="" className="spinner" />
 
 
             </div>

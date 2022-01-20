@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { unstable_renderSubtreeIntoContainer } from "react-dom";
 import loading from "./imgs/loading.gif"
 
 const serverDomain = "https://lukas-backend.herokuapp.com/";
@@ -39,7 +40,7 @@ function Blog() {
             </div>
           );
         })}
-      <img src={!data && loading} alt="" className="spinner" />
+      <img src={!data ? loading : undefined} alt="" className="spinner" />
     </div>
   );
 }
