@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import React, {useState, useRef, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useState, useRef } from 'react/cjs/react.development';
 import fullscreen from './imgs/fullscreen.png'
 import exitFull from './imgs/exitFull.png'
 import loading from "./imgs/loading.gif"

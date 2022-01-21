@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { unstable_renderSubtreeIntoContainer } from "react-dom";
 import loading from "./imgs/loading.gif"
 
 const serverDomain = "https://lukas-backend.herokuapp.com/";
