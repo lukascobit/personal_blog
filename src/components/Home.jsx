@@ -47,8 +47,8 @@ function Home() {
                 <br/> Moje projekty mám na svém <a href="https://github.com/lukascobit">Githubu</a>,
                 <br/> ty nejzajímavější jsou <a href="/projekty">tady</a></h2>
 
-                <div onClick={()=>window.location = `/projekty/${project.id}`} className="newestStuff">
-                    <div className='newestBlog'>
+                <div className="newestStuff">
+                    <div onClick={()=>window.location = `/projekty/${project.id}`} className='newestBlog'>
                         <p className='halfTrans'>Nejnovější projekt:</p>
                         <h1>{project && project.project_name}</h1>
                         <h3>{project && project.body}</h3>
@@ -56,7 +56,6 @@ function Home() {
 
                     <div onClick={()=>window.location = `/blog/${data.id}`} className='newestBlog'>
                         <p className='halfTrans'>Nejnovější blog:</p>
-                        
                         <h1>{data && data.title}</h1>
                         <h3>{data.body}</h3>
                     </div>

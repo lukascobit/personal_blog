@@ -1,5 +1,6 @@
-import React, { useEffect, useParams, useState } from 'react'
+import React, { useEffect,  useState } from 'react'
 import loading from "./imgs/loading.gif"
+import { useParams } from 'react-router-dom'
 
 
 
