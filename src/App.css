@@ -267,7 +267,7 @@ iframe {
   filter: alpha(opacity=60);
 }
 .halfTrans{
-  opacity: 80%;
+  color: rgba(255, 255, 255, 0.616);
 }
 .newestBlog{
   background-color: var(--blog);

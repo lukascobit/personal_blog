@@ -25,7 +25,7 @@ function App() {
       <div className="pagesLinks">
         <a
           className={
-            window.location.pathname === "/bhnb log"
+            window.location.pathname.startsWith("/blog")
               ? "currentPagesLink"
               : "pagesLink"
           }
@@ -35,7 +35,7 @@ function App() {
         </a>
         <a
           className={
-            window.location.pathname === "/projekty"
+            window.location.pathname.startsWith("/projekty")
               ? "currentPagesLink"
               : "pagesLink"
           }
