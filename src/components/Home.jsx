@@ -7,6 +7,7 @@ function Home() {
     const serverDomain = "https://lukas-backend.herokuapp.com/"
     const { id } = useParams()
     const [data, setData] = useState([])
+    const [project, setProject] = useState([])
 
 
     useEffect(()=>{
@@ -21,6 +22,21 @@ function Home() {
         }
         getBlog()
     },[])
+    
+
+    useEffect(()=>{
+        async function getProject(){
+            try {
+                const response = await fetch(serverDomain + `projects`);
+                const jsonData = await response.json();
+                setProject(jsonData.at(-1))
+                console.log(jsonData);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getProject()
+    },[])
 
     return (
         <div>
@@ -29,15 +45,22 @@ function Home() {
                 <h2 className='introduction'> <img className='bigPfp' src={pfp} alt="" />
                 <br/> Čau, já jsem Lukáš 
                 <br/> Moje projekty mám na svém <a href="https://github.com/lukascobit">Githubu</a>,
-                <br/> ty nejzajímavější jsou<a href="/projekty"> tady</a></h2>
+                <br/> ty nejzajímavější jsou <a href="/projekty">tady</a></h2>
 
-                <div className='newestProject'>
+                <div onClick={()=>window.location = `/projekty/${project.id}`} className="newestStuff">
+                    <div className='newestBlog'>
+                        <p className='halfTrans'>Nejnovější projekt:</p>
+                        <h1>{project && project.project_name}</h1>
+                        <h3>{project && project.body}</h3>
+                    </div>
 
-                </div>
-                <div className='newestBlog'>
-                    {data && console.log(data)}
-                    <h1>{data && data.title}</h1>
-                    <h2>{data.body}</h2>
+                    <div onClick={()=>window.location = `/blog/${data.id}`} className='newestBlog'>
+                        <p className='halfTrans'>Nejnovější blog:</p>
+                        
+                        <h1>{data && data.title}</h1>
+                        <h3>{data.body}</h3>
+                    </div>
+
                 </div>
             </div>
         </div>

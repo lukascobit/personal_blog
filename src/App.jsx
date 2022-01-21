@@ -25,7 +25,7 @@ function App() {
       <div className="pagesLinks">
         <a
           className={
-            window.location.pathname === "/blog"
+            window.location.pathname === "/bhnb log"
               ? "currentPagesLink"
               : "pagesLink"
           }
